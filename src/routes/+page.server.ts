@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { dev } from '$app/environment';
+import { building, dev } from '$app/environment';
 import { Pool, neonConfig } from '@neondatabase/serverless';
 import { PrismaNeon } from '@prisma/adapter-neon';
 import { PrismaClient } from '@prisma/client/edge';
@@ -10,17 +10,16 @@ if (dev) {
     await import("dotenv").then((dotenv) => dotenv.config());
 }
 
-let pool: Pool;
-let adapter: PrismaNeon;
 let prisma: PrismaClient;
-
-export const load: PageServerLoad = async ({}) => {
+if (!building) {
     neonConfig.webSocketConstructor = ws;
     const connectionString = `${env.DATABASE_URL}`;
-    pool = pool || new Pool({ connectionString });
-    adapter = adapter || new PrismaNeon(pool);
-    prisma = prisma || new PrismaClient({ adapter });
+    const pool = new Pool({ connectionString });
+    const adapter = new PrismaNeon(pool);
+    prisma = new PrismaClient({ adapter });
+}
 
+export const load: PageServerLoad = async () => {
     return {
         toDoListEntries: await prisma.toDoListEntry.findMany(),
     };
