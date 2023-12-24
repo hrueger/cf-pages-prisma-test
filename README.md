@@ -1,4 +1,4 @@
-# Prisma CF Workers Test
+# Prisma CF Pages Test
 
 ```
 yarn build
