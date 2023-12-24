@@ -10,16 +10,20 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@prisma/adapter-pg": "early-access",
 		"@sveltejs/adapter-cloudflare": "^3.0.1",
 		"@sveltejs/kit": "^2.0.4",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/ws": "^8.5.10",
 		"dotenv": "^16.3.1",
+		"events": "^3.3.0",
+		"pg": "^8.11.3",
 		"svelte": "^4.2.8",
 		"svelte-check": "^3.6.2",
 		"tslib": "^2.6.2",
 		"typescript": "^5.3.3",
 		"vite": "^5.0.10",
+		"vite-plugin-wasm-esm": "^1.0.0",
 		"wrangler": "^3.22.0"
 	},
 	"type": "module",
@@ -30,5 +34,8 @@
 		"@prisma/client": "early-access",
 		"prisma": "early-access",
 		"ws": "^8.15.1"
+	},
+	"resolutions": {
+		"@sveltejs/adapter-cloudflare@^3.0.1": "patch:@sveltejs/adapter-cloudflare@npm%3A3.0.1#./.yarn/patches/@sveltejs-adapter-cloudflare-npm-3.0.1-0f88a14746.patch"
 	}
 }

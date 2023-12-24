@@ -555,6 +555,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/adapter-pg@npm:early-access":
+  version: 5.8.0-dev.32
+  resolution: "@prisma/adapter-pg@npm:5.8.0-dev.32"
+  dependencies:
+    "@prisma/driver-adapter-utils": 5.8.0-dev.32
+    postgres-array: 3.0.2
+  peerDependencies:
+    pg: ^8.11.3
+  checksum: 5484a0dbb6122e41c730fa9f7d851e106eaad53f8c8841afa58df2cbd550886b2e037dbbd6d43d2db2e5b4de1b23b1524182810c88d71f5368394ff0921083e6
+  languageName: node
+  linkType: hard
+
 "@prisma/client@npm:early-access":
   version: 5.8.0-dev.32
   resolution: "@prisma/client@npm:5.8.0-dev.32"
@@ -713,7 +725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-cloudflare@npm:^3.0.1":
+"@sveltejs/adapter-cloudflare@npm:3.0.1":
   version: 3.0.1
   resolution: "@sveltejs/adapter-cloudflare@npm:3.0.1"
   dependencies:
@@ -723,6 +735,19 @@ __metadata:
   peerDependencies:
     "@sveltejs/kit": ^2.0.0
   checksum: 0317c318ccda92c913eec62a707d902461d44714231aa681fe3c2cf5c50180eddf1ef5ca6a844126f5c5500028d5709032850e7a67a4a4b8b88be77f01727598
+  languageName: node
+  linkType: hard
+
+"@sveltejs/adapter-cloudflare@patch:@sveltejs/adapter-cloudflare@npm%3A3.0.1#./.yarn/patches/@sveltejs-adapter-cloudflare-npm-3.0.1-0f88a14746.patch::locator=cf-workers-prisma-test%40workspace%3A.":
+  version: 3.0.1
+  resolution: "@sveltejs/adapter-cloudflare@patch:@sveltejs/adapter-cloudflare@npm%3A3.0.1#./.yarn/patches/@sveltejs-adapter-cloudflare-npm-3.0.1-0f88a14746.patch::version=3.0.1&hash=ddf6b6&locator=cf-workers-prisma-test%40workspace%3A."
+  dependencies:
+    "@cloudflare/workers-types": ^4.20231121.0
+    esbuild: ^0.19.9
+    worktop: 0.8.0-next.15
+  peerDependencies:
+    "@sveltejs/kit": ^2.0.0
+  checksum: 975891611b8c9ccd09e99730f144ed8cb9ba012a7edea901fe851f88b778546d15110b14c599c87c188e0f7e695f3f62aa3578d2cef6a71a64ed14324f572adf
   languageName: node
   linkType: hard
 
@@ -1055,6 +1080,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"buffer-writer@npm:2.0.0":
+  version: 2.0.0
+  resolution: "buffer-writer@npm:2.0.0"
+  checksum: 11736b48bb75106c52ca8ec9f025e7c1b3b25ce31875f469d7210eabd5c576c329e34f6b805d4a8d605ff3f0db1e16342328802c4c963e9c826b0e43a4e631c2
+  languageName: node
+  linkType: hard
+
 "cacache@npm:^17.0.0":
   version: 17.1.4
   resolution: "cacache@npm:17.1.4"
@@ -1098,18 +1130,22 @@ __metadata:
   dependencies:
     "@neondatabase/serverless": ^0.6.1
     "@prisma/adapter-neon": early-access
+    "@prisma/adapter-pg": early-access
     "@prisma/client": early-access
     "@sveltejs/adapter-cloudflare": ^3.0.1
     "@sveltejs/kit": ^2.0.4
     "@sveltejs/vite-plugin-svelte": ^3.0.0
     "@types/ws": ^8.5.10
     dotenv: ^16.3.1
+    events: ^3.3.0
+    pg: ^8.11.3
     prisma: early-access
     svelte: ^4.2.8
     svelte-check: ^3.6.2
     tslib: ^2.6.2
     typescript: ^5.3.3
     vite: ^5.0.10
+    vite-plugin-wasm-esm: ^1.0.0
     wrangler: ^3.22.0
     ws: ^8.15.1
   languageName: unknown
@@ -1531,6 +1567,13 @@ __metadata:
   dependencies:
     "@types/estree": ^1.0.0
   checksum: a65728d5727b71de172c5df323385755a16c0fdab8234dc756c3854cfee343261ddfbb72a809a5660fac8c75d960bb3e21aa898c2d7e9b19bb298482ca58a3af
+  languageName: node
+  linkType: hard
+
+"events@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "events@npm:3.3.0"
+  checksum: f6f487ad2198aa41d878fa31452f1a3c00958f46e9019286ff4787c84aac329332ab45c9cdc8c445928fc6d7ded294b9e005a7fce9426488518017831b272780
   languageName: node
   linkType: hard
 
@@ -2299,6 +2342,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"packet-reader@npm:1.0.0":
+  version: 1.0.0
+  resolution: "packet-reader@npm:1.0.0"
+  checksum: 0b7516f0cbf3e322aad591bed29ba544220088c53943145c0d9121a6f59182ad811f7fd6785a8979a34356aca69d97653689029964c5998dc02645633d88ffd7
+  languageName: node
+  linkType: hard
+
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -2350,6 +2400,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pg-cloudflare@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "pg-cloudflare@npm:1.1.1"
+  checksum: 32aac06b5dc4588bbf78801b6267781bc7e13be672009df949d08e9627ba9fdc26924916665d4de99d47f9b0495301930547488dad889d826856976c7b3f3731
+  languageName: node
+  linkType: hard
+
+"pg-connection-string@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "pg-connection-string@npm:2.6.2"
+  checksum: 22265882c3b6f2320785378d0760b051294a684989163d5a1cde4009e64e84448d7bf67d9a7b9e7f69440c3ee9e2212f9aa10dd17ad6773f6143c6020cebbcb5
+  languageName: node
+  linkType: hard
+
 "pg-int8@npm:1.0.1":
   version: 1.0.1
   resolution: "pg-int8@npm:1.0.1"
@@ -2357,14 +2421,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-protocol@npm:*":
+"pg-pool@npm:^3.6.1":
+  version: 3.6.1
+  resolution: "pg-pool@npm:3.6.1"
+  peerDependencies:
+    pg: ">=8.0"
+  checksum: 8a6513e6f74a794708c9dd16d2ccda0debadc56435ec2582de2b2e35b01315550c5dab8a0a9a2a16f4adce45523228f5739940fb7687ec7e9c300f284eb08fd1
+  languageName: node
+  linkType: hard
+
+"pg-protocol@npm:*, pg-protocol@npm:^1.6.0":
   version: 1.6.0
   resolution: "pg-protocol@npm:1.6.0"
   checksum: e12662d2de2011e0c3a03f6a09f435beb1025acdc860f181f18a600a5495dc38a69d753bbde1ace279c8c442536af9c1a7c11e1d0fe3fad3aa1348b28d9d2683
   languageName: node
   linkType: hard
 
-"pg-types@npm:^2.2.0":
+"pg-types@npm:^2.1.0, pg-types@npm:^2.2.0":
   version: 2.2.0
   resolution: "pg-types@npm:2.2.0"
   dependencies:
@@ -2374,6 +2447,39 @@ __metadata:
     postgres-date: ~1.0.4
     postgres-interval: ^1.1.0
   checksum: bf4ec3f594743442857fb3a8dfe5d2478a04c98f96a0a47365014557cbc0b4b0cee01462c79adca863b93befbf88f876299b75b72c665b5fb84a2c94fbd10316
+  languageName: node
+  linkType: hard
+
+"pg@npm:^8.11.3":
+  version: 8.11.3
+  resolution: "pg@npm:8.11.3"
+  dependencies:
+    buffer-writer: 2.0.0
+    packet-reader: 1.0.0
+    pg-cloudflare: ^1.1.1
+    pg-connection-string: ^2.6.2
+    pg-pool: ^3.6.1
+    pg-protocol: ^1.6.0
+    pg-types: ^2.1.0
+    pgpass: 1.x
+  peerDependencies:
+    pg-native: ">=3.0.1"
+  dependenciesMeta:
+    pg-cloudflare:
+      optional: true
+  peerDependenciesMeta:
+    pg-native:
+      optional: true
+  checksum: 8af9468b8969fa0d73a6b349216c8cbc953d938fcae5594f2d24043060e9226a072c8085fc4230172b5576fcab4c39c8563c655f271dc2a9209b6ad5370cafe5
+  languageName: node
+  linkType: hard
+
+"pgpass@npm:1.x":
+  version: 1.0.5
+  resolution: "pgpass@npm:1.0.5"
+  dependencies:
+    split2: ^4.1.0
+  checksum: 947ac096c031eebdf08d989de2e9f6f156b8133d6858c7c2c06c041e1e71dda6f5f3bad3c0ec1e96a09497bbc6ef89e762eefe703b5ef9cb2804392ec52ec400
   languageName: node
   linkType: hard
 
@@ -2826,6 +2932,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"split2@npm:^4.1.0":
+  version: 4.2.0
+  resolution: "split2@npm:4.2.0"
+  checksum: 05d54102546549fe4d2455900699056580cca006c0275c334611420f854da30ac999230857a85fdd9914dc2109ae50f80fda43d2a445f2aa86eccdc1dfce779d
+  languageName: node
+  linkType: hard
+
 "ssri@npm:^10.0.0":
   version: 10.0.5
   resolution: "ssri@npm:10.0.5"
@@ -3131,6 +3244,15 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
+  languageName: node
+  linkType: hard
+
+"vite-plugin-wasm-esm@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "vite-plugin-wasm-esm@npm:1.0.0"
+  peerDependencies:
+    vite: 3.x || 4.x
+  checksum: 837d13a2d8988292857e4519460ac7a2b4e30c905f7a5c57c4aed40a70b742a389191edcf0c3658dbf4696123be0857f7160aa07d83d025a450aace4aedaf0f4
   languageName: node
   linkType: hard
 
