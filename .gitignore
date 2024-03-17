@@ -16,3 +16,5 @@ vite.config.ts.timestamp-*
 !.yarn/sdks
 !.yarn/versions
 .wrangler
+prisma/dev.db
+prisma/dev.db-journal

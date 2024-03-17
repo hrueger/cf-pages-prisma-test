@@ -1,17 +1,9 @@
 import type { PageServerLoad, Actions } from './$types';
-import { dev } from '$app/environment';
-import { Pool, neonConfig } from '@neondatabase/serverless';
-import { PrismaNeon } from '@prisma/adapter-neon';
-import { PrismaClient } from '@prisma/client/edge';
-import ws from 'ws';
-import { DATABASE_URL } from '$env/static/private';
+import { PrismaClient } from '@prisma/client';
+import { PrismaD1 } from '@prisma/adapter-d1';
 
-if (dev) {
-    await import("dotenv").then((dotenv) => dotenv.config());
-}
-
-export const load: PageServerLoad = async ({}) => {
-    const prisma = getPrisma();
+export const load: PageServerLoad = async ({ platform }) => {
+    const prisma = getPrisma(platform);
 
     return {
         toDoListEntries: await prisma.toDoListEntry.findMany(),
@@ -19,8 +11,8 @@ export const load: PageServerLoad = async ({}) => {
 }
 
 export const actions = {
-    createToDoListEntry: async ({ request }) => {
-        const prisma = getPrisma();
+    createToDoListEntry: async ({ request, platform }) => {
+        const prisma = getPrisma(platform);
         const title = await request.formData().then((formData) => formData.get('title')) as string;
         const toDoListEntry = await prisma.toDoListEntry.create({
             data: {
@@ -31,13 +23,19 @@ export const actions = {
             toDoListEntry,
         };
     },
+    deleteToDoListEntry: async ({ request, platform }) => {
+        const prisma = getPrisma(platform);
+        const id = await request.formData().then((formData) => formData.get('id')) as string;
+        await prisma.toDoListEntry.delete({
+            where: {
+                id: parseInt(id),
+            },
+        });
+    }
 } satisfies Actions;
 
-function getPrisma() {
-    neonConfig.webSocketConstructor = ws;
-    const connectionString = `${DATABASE_URL}`;
-    const pool = new Pool({ connectionString });
-    const adapter = new PrismaNeon(pool);
+function getPrisma(platform?: App.Platform): PrismaClient {
+    const adapter = new PrismaD1(platform!.env.MY_DB);
     const prisma = new PrismaClient({ adapter });
     return prisma;
 }

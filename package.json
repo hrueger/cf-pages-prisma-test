@@ -10,32 +10,26 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@prisma/adapter-pg": "early-access",
-		"@sveltejs/adapter-cloudflare": "^3.0.1",
-		"@sveltejs/kit": "^2.0.4",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@sveltejs/adapter-cloudflare": "^4.2.0",
+		"@sveltejs/kit": "^2.5.4",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@types/ws": "^8.5.10",
-		"dotenv": "^16.3.1",
+		"dotenv": "^16.4.5",
 		"events": "^3.3.0",
 		"pg": "^8.11.3",
-		"svelte": "^4.2.8",
-		"svelte-check": "^3.6.2",
+		"prisma": "early-access",
+		"svelte": "^4.2.12",
+		"svelte-check": "^3.6.7",
 		"tslib": "^2.6.2",
-		"typescript": "^5.3.3",
-		"vite": "^5.0.10",
+		"typescript": "^5.4.2",
+		"vite": "^5.1.6",
 		"vite-plugin-wasm-esm": "^1.0.0",
-		"wrangler": "^3.22.0"
+		"wrangler": "^3.34.2"
 	},
 	"type": "module",
 	"packageManager": "yarn@3.6.4",
 	"dependencies": {
-		"@neondatabase/serverless": "^0.6.1",
-		"@prisma/adapter-neon": "early-access",
-		"@prisma/client": "early-access",
-		"prisma": "early-access",
-		"ws": "^8.15.1"
-	},
-	"resolutions": {
-		"@sveltejs/adapter-cloudflare@^3.0.1": "patch:@sveltejs/adapter-cloudflare@npm%3A3.0.1#./.yarn/patches/@sveltejs-adapter-cloudflare-npm-3.0.1-0f88a14746.patch"
+		"@prisma/adapter-d1": "early-access",
+		"@prisma/client": "early-access"
 	}
 }

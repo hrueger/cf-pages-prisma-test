@@ -1,17 +1,20 @@
 # Prisma CF Pages Test
 
+## Development
+```sh
+yarn dev
 ```
+
+## Deployment
+- Manually add binding in cf dashboard
+```sh
 yarn build
 npx wrangler pages deploy .svelte-kit/cloudflare
 npx wrangler pages deployment tail --project-name cf-workers-prisma-test
 ```
 
-## Development (at least tried)
-
-Run both commands in separate terminals
+## DB Migrations
+```sh
+npx wrangler d1 execute MY_DB --file prisma/migrations/20240317083105_initial/migration.sql
+npx wrangler d1 execute MY_DB --file prisma/migrations/20240317083105_initial/migration.sql --remote
 ```
-yarn build -w
-npx wrangler pages dev .svelte-kit/cloudflare
-```
-
---> would like to achieve dev environemt with hot reload by using the standard `yarn dev` command

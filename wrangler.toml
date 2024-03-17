@@ -1,0 +1,4 @@
+[[d1_databases]]
+binding = "MY_DB"
+database_name = "cf-pages-prisma-d1-test"
+database_id = "fa734236-0637-4b99-9725-ce06229442f2"

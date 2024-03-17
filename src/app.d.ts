@@ -5,7 +5,11 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface Platform {}
+		interface Platform {
+			env: {
+				MY_DB: import("@cloudflare/workers-types").D1Database;
+			}
+		}
 	}
 }
 
