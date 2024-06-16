@@ -8,6 +8,7 @@ declare global {
 		interface Platform {
 			env: {
 				MY_DB: import("@cloudflare/workers-types").D1Database;
+				HYPERDRIVE: import("@cloudflare/workers-types").Hyperdrive;
 			}
 		}
 	}

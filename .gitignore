@@ -18,3 +18,4 @@ vite.config.ts.timestamp-*
 .wrangler
 prisma/dev.db
 prisma/dev.db-journal
+*.vars

@@ -1,4 +1,11 @@
-[[d1_databases]]
-binding = "MY_DB"
-database_name = "cf-pages-prisma-d1-test"
-database_id = "fa734236-0637-4b99-9725-ce06229442f2"
+name = "cf-workers-prisma-test"
+pages_build_output_dir = ".svelte-kit/cloudflare"
+compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2024-05-13"
+placement = { mode = "smart"}
+
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "734c9235ba3d44d98c1377b4bc2fb6d4"
+localConnectionString = "postgresql://user:password@localhost:5432/database"

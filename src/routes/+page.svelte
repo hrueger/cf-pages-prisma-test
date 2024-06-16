@@ -4,7 +4,8 @@
 
     export let data: PageServerData;
 </script>
-<h1>SvelteKit and Prisma running on the Edge and using the D1 database 🎉</h1>
+<h1>SvelteKit and Prisma running on the Edge 🎉</h1>
+<small>Database: Postgres hosted at Contabo (Düsseldorf), but page rendered using Cloudflare Pages ({data.pageRenderedAt})</small>
 
 <ul>
     {#each data.toDoListEntries as toDoListEntry}

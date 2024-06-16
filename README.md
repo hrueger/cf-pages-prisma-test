@@ -9,7 +9,7 @@ yarn dev
 - Manually add binding in cf dashboard
 ```sh
 yarn build
-npx wrangler pages deploy .svelte-kit/cloudflare
+npx wrangler pages deploy
 npx wrangler pages deployment tail --project-name cf-workers-prisma-test
 ```
 
